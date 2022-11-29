@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="zwe.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <h1 style="color:red;margin: 100px 730px;">Vue JS</h1>
+    <div id="app">
+        <div v-if="showHide">
+            <div v-for="book in books">
+                Name - {{ book.Name }}
+                Author - {{ book.author }}
+                Age - {{ book.age }}
+            </div>
+        </div>
+        <button @click="showHide=!showHide">
+            <span v-if="showHide">Show</span>
+            <span v-if="!showHide">Hide</span>
+        </button>
+    </div>
+</body>
+<script>
+
+    let app = Vue.createApp({
+        data() {
+            return {
+                books: [
+                    {
+                        Name: "You don't know Js",
+                        author: "Zwe Htet Aung",
+                        age: 20,
+                    },
+                    {
+                        Name: "You don't know Js",
+                        author: "Zwe Htet Aung",
+                        age: 24,
+                    },
+                    {
+                        Name: "You don't know Js",
+                        author: "Zwe Htet Aung",
+                        age: 30,
+                    },
+                ],
+                showHide: true
+            }
+        },
+    });
+
+    app.mount('#app');
+
+</script>
+
+</html>

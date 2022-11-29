@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vue Testing</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+</head>
+<style>
+    .container {
+        width: 800px;
+        margin-left: 300px;
+        margin-top: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .first,
+    .second,
+    .third {
+        width: 200px;
+        height: 200px;
+        background-color: coral;
+    }
+
+    .first h1,
+    .second h1,
+    .third h1 {
+        text-align: center;
+        font-size: 18px;
+        margin-top: 85px;
+        letter-spacing: 1px;
+        font-weight: bolder;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .favourite {
+        background-color: aqua;
+    }
+
+    li {
+        list-style-type: square;
+    }
+</style>
+
+
+<body>
+    <h1>Vue</h1>
+    <div id="app">
+        <div v-if="showBook">
+            <h1>Book Name - {{ title }}</h1>
+            <h1>Book Author - {{ author }}</h1>
+            <h1>Book Qualtity - {{ bookQty }}</h1>
+        </div>
+        <button v-on:click="increaseQty">Increase</button>
+        <button @click="showBook = !showBook">
+            <span v-if="showBook">Show</span>
+            <span v-if="!showBook">Hide</span>
+        </button>
+    </div>
+    <hr>
+    <div id="appTwo">
+        <div class="container">
+            <div class="first" @mouseover="mouseoverhandler">
+                <h1>Mouse over</h1>
+            </div>
+            <div class="second" @mouseleave="mouseleavehandler">
+                <h1>Mouse leave</h1>
+            </div>
+            <div class="third" @dblclick="dblclickhandler">
+                <h1>Double click</h1>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div id="appThree">
+        <div>
+            <h1>{{ books[0].title }}</h1>
+            <h1>{{ books[0].author }}</h1>
+            <h1>{{ books[0].age }}</h1>
+        </div>
+        <br>
+        <ul v-for="book in books">
+            <li :class="{favourite:book.isfav}">
+                <img :src="book.image" style="width: 300px; height: 300px; object-fit: cover;object-position: center;">
+                <h1>{{ book.title }}</h1>
+                <h1>{{ book.author }}</h1>
+                <h1>{{ book.age }}</h1>
+                <hr>
+            </li>
+        </ul>
+        <a v-bind:href="linkOne">Google</a>
+        <a :href="linkTwo">YouTube</a>
+    </div>
+    <div id="appFour">
+        <ul v-for="megazine in megazines">
+            <li :class="{favourite:megazine.isfav}" @click="megazine.isfav=!megazine.isfav">
+                <h2>{{ megazine.title }}</h2>
+                <h2>{{ megazine.author }}</h2>
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <div id="appFive">
+        <ul v-for="car in filteredType">
+            <div v-if="car.isFav">
+                <li :class="{favourite:car.isFav}" @click="choose(car)">
+                    <p>{{ car.type }}</p>
+                    <p>{{ car.price }}</p>
+                </li>
+            </div>
+            <button @click="car.isFav = !car.isFav">
+                <span v-if="car.isFav">Show</span>
+                <span v-if="!car.isFav">Hide</span>
+            </button>
+        </ul>
+    </div>
+</body>
+<script src="./app.js"></script>
+
+</html>

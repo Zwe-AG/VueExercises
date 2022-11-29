@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+</head>
+<body>
+ 
+    <h1>Vue Javascript</h1>
+
+    <div id="app">
+        <h2>bookTitle-{{title}}</h2>
+        <h4>author - {{author}}</h4>
+        <h4>Author age is - {{age}}</h4>
+        <button v-on:click="age++" class="A">IncreaseAge</button>
+        <button v-on:click="author='aung aung'" class="A ">changeAuthorName</button>
+        <button v-on:click="title=' I know Javascript'" class="A ">changeTitleName</button>
+    
+    </div>
+
+    <div id="cat">
+        <div v-if="showBook">
+            <p>Book name - {{Name}}</p>
+            <p>Author- {{Writer}}</p>
+            <p>Age - {{No}}</p>
+        </div>
+    
+        <!-- <button @click="showBook=false">Hide Book</button>
+        <button @click="showBook=true">show Book</button> -->
+           
+        <!-- <button @click="showBook=!showBook">toggleBook</button> -->
+
+        <button @click="showBook=!showBook">
+            <span v-if="showBook===true">Hide</span>   
+            <span v-if="showBook===false">Show</span>
+        </button>
+
+
+
+        <div class="box" @mouseover="mouseoverHandler">Mouse Over</div>
+        <div class="box" @mouseleave="mouseleaveHandler">Mouse leave</div>
+        <div class="box" @dblclick="dblclickHandler">Mouse Double Click</div> 
+    </div>
+
+    
+
+
+
+
+
+<script src="app.js"></script>
+
+
+</body>
+</html>

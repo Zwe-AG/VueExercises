@@ -1,0 +1,57 @@
+h2{
+    color: aqua;
+
+    
+}
+h2:hover{
+    color: red;
+    background-color: azure;
+    border: 2px solid black;
+    padding: 10px 20px;
+    display: inline-block;
+
+}
+/* body{
+    background-image: url('https://pbs.twimg.com/profile_images/752518047785680896/UDRhCmtb.jpg');
+    background-position: relative;
+    background-repeat: no-repeat;
+    
+    
+} */
+
+div{
+    border: 2px solid black;
+    text-align: center;
+    margin-top: 200px;
+   
+
+}
+.A{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 650px;
+    border: 2px solid black;
+    padding: 10px 20px;
+    transition: 5s ;
+
+}
+
+.A:hover{
+    color: blue;
+    background-color: blanchedalmond;
+    letter-spacing: 10px;
+    border-left: 8px solid black;
+    border-right: 8px solid royalblue;
+   
+}
+
+.box{
+    border: 2px solid black;
+    background-color: blue;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
